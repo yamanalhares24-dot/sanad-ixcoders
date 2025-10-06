@@ -1,0 +1,132 @@
+/* الحاوية العامة للسلايدر */
+.product-list-container {
+  position: relative;
+  padding: 16px 0 0;
+}
+
+/* شريط علوي وهمي فقط لنضع فيه أزرار التنقل يمين */
+.product-list-head {
+  position: relative;
+  height: 0; /* ما بدنا ياخد حيّز */
+}
+
+/* مجموعة أزرار التنقل أعلى يمين السلايدر */
+.product-navs {
+  position: absolute;
+  right: 0;
+  top: -46px; /* عدّلها حسب تصميمك */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+/* شكل الأزرار (دوائر بيضاء مع ظل) */
+.product-nav,
+.product-list-container .swiper-button-prev,
+.product-list-container .swiper-button-next {
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #111;
+  display: grid;
+  place-items: center;
+}
+
+/* حجم السهم داخل الزر */
+.product-list-container .swiper-button-prev::after,
+.product-list-container .swiper-button-next::after {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/* ضمان أن السلايدر أفقي داخل هذه الحاوية فقط                    */
+/* ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.product-list-container .swiper {
+  overflow: visible; /* لتطلع الأزرار فوق الظلال برا السلايدر لو حبيت */
+}
+
+.product-list-container .swiper-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch;
+}
+
+.product-list-container .swiper-slide {
+  width: auto !important; /* اترك Swiper يوزّع العرض حسب slidesPerView */
+  flex-shrink: 0 !important; /* لا يضغط العناصر */
+}
+
+/* زر "عرض كل المنتجات" أسفل السلايدر */
+.product-list-footer {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 8px;
+}
+
+.view-all-btn {
+  background: #db4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(219, 68, 68, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  text-decoration: none; /* لو كانت <a> */
+}
+
+.view-all-btn:hover {
+  background: #c63c3c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(219, 68, 68, 0.3);
+}
+
+.view-all-btn:active {
+  transform: translateY(0);
+}
+
+.product-list-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #db4444;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background: #c73e3e;
+}
+
+/* (اختياري) لو بدك الأزرار تختفي بالموبايل */
+@media (max-width: 480px) {
+  .product-navs {
+    top: -42px;
+    gap: 8px;
+  }
+
+  .product-nav {
+    width: 34px;
+    height: 34px;
+  }
+
+  .product-list-container .swiper-button-prev::after,
+  .product-list-container .swiper-button-next::after {
+    font-size: 12px;
+  }
+}

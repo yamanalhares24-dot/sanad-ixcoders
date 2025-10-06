@@ -1,0 +1,112 @@
+:root {
+  --nf-primary: #db4444;
+  --nf-text: #111;
+  --nf-muted: #6b7280;
+  --nf-border: #e5e7eb;
+  --nf-bg: #fff;
+}
+
+.root {
+  background: var(--nf-bg);
+  color: var(--nf-text);
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.bcList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--nf-muted);
+}
+
+.bcItem {
+  display: inline-flex;
+  align-items: center;
+
+  & + &::before {
+    content: "/";
+    margin-right: 12px;
+    color: var(--nf-border);
+  }
+}
+
+.bcLink {
+  color: var(--nf-muted);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--nf-text);
+  }
+}
+
+.current {
+  color: var(--nf-text);
+  font-weight: 500;
+}
+
+/* ---------- Main ---------- */
+.wrapper {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px 0 80px;
+}
+
+.title {
+  margin: 24px 0 10px;
+  font-weight: 700;
+  line-height: 1.1;
+  /* Large but responsive like the shot */
+  font-size: clamp(44px, 7vw, 96px);
+}
+
+.desc {
+  margin: 0 0 28px;
+  color: var(--nf-muted);
+  font-size: 15px;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: var(--nf-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(219, 68, 68, 0.25);
+    background: #d23d3d;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+/* Optional: a simple .container helper if you don't already have one */
+// :global(.container) {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding-left: 24px;
+//   padding-right: 24px;
+// }

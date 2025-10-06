@@ -1,0 +1,50 @@
+/* Import responsive styles */
+@import './shared/styles/responsive.css';
+
+/* Global responsive adjustments */
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+}

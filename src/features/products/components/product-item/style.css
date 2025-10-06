@@ -1,0 +1,179 @@
+:root {
+  --pc-radius: 12px;
+  --pc-border: #eee;
+  --pc-soft: #f6f7f9;
+  --pc-primary: #db4444;
+  --pc-title: #0f0f0f;
+  --pc-muted: #777;
+  --pc-star: #ffad33;
+}
+
+.product-card {
+  width: 300px; /* tweak as needed */
+  height: 390px;
+  background: #fff;
+  border: 1px solid var(--pc-border);
+  border-radius: var(--pc-radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.05);
+}
+
+/* ===== media ===== */
+.pc-media {
+  position: relative;
+  background: var(--pc-soft);
+  border-radius: 10px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pc-img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+  /* object-fit: contain; */
+  display: block;
+}
+
+/* badge */
+.pc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--pc-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* action icons (heart / eye) */
+.pc-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--pc-border);
+  border-radius: 999px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.pc-icon--second {
+  right: 58px;
+} /* the eye button to the left */
+
+.pc-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.pc-icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* title */
+.pc-title {
+  margin: 4px 0 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--pc-title);
+  line-height: 1.25;
+}
+
+/* price row */
+.pc-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pc-price__now {
+  color: var(--pc-primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+.pc-price__old {
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+/* rating row */
+.pc-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.pc-stars {
+  display: inline-flex;
+  gap: 4px;
+}
+.pc-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--pc-star);
+}
+.pc-reviews {
+  color: #9ca3af;
+  font-size: 14px;
+}
+/* Ensure the media area can host absolute elements */
+.pc-media {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Add-to-Cart bar (hidden by default) */
+.pc-cta {
+  position: absolute;
+  /* left: 10px; */
+  /* right: 10px; */
+  bottom: 0px;
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #111; /* black bar to match your design */
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  /* hidden state */
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* Show on hover */
+.product-card:hover .pc-cta,
+.pc-media:hover .pc-cta {
+  bottom: 0;
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Optional: keyboard focus */
+.pc-cta:focus-visible {
+  outline: 2px solid #e94545;
+  outline-offset: 2px;
+}

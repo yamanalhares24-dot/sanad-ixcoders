@@ -1,0 +1,61 @@
+/* ===== Core (مشترك) ===== */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #eeeeee;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --accent: #db4444;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+/* Utilities */
+.ta-right {
+  text-align: right;
+}
+.ta-center {
+  text-align: center;
+}
+
+/* Buttons (مشترك) */
+.btn-outline {
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: box-shadow 0.15s ease, transform 0.05s ease;
+}
+.btn-outline:hover {
+  box-shadow: var(--shadow-soft);
+}
+.btn-outline:active {
+  transform: translateY(1px);
+}
+
+.btn-accent {
+  height: 44px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.03);
+  transition: transform 0.05s ease, filter 0.15s ease;
+}
+.btn-accent:hover {
+  filter: brightness(0.98);
+}
+.btn-accent:active {
+  transform: translateY(1px);
+}

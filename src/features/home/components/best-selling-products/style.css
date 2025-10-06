@@ -1,0 +1,17 @@
+.best-selling {
+  margin: 40px 0;
+}
+
+.best-selling__grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .best-selling__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

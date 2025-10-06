@@ -1,0 +1,164 @@
+/* Design tokens – tweak freely to match your system */
+$accent: #db4444; // the red fill on hover/active
+$text: #111827;
+$muted: #6b7280;
+$line: #eaeaea;
+$tile-bg: #fff;
+$radius: 14px;
+$shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+.categories {
+  position: relative;
+  padding: 20px 0;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__eyebrow {
+    grid-column: 1 / -1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: $accent;
+    font-weight: 600;
+    .dot {
+      width: 20px;
+      height: 40px;
+      border-radius: 6px;
+      background: $accent;
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: $text;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 10px;
+    .navBtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid $line;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.18s ease,
+        box-shadow 0.18s ease;
+      svg {
+        fill: $text;
+      }
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow;
+        // border-color: darken($line, 5%);
+      }
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(160px, 1fr);
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 8px 0 4px;
+    scrollbar-width: thin;
+
+    /* nicer scrollbars (optional) */
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Category Card */
+.catCard {
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 26px 18px;
+  border-radius: $radius;
+  border: 1px solid $line;
+  background: $tile-bg;
+  box-shadow: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease, box-shadow 0.22s ease, transform 0.12s ease;
+
+  .catCard__icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: transparent;
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: $text;
+      transition: fill 0.22s ease;
+    }
+  }
+
+  .catCard__label {
+    font-size: 14px;
+    color: $text;
+    transition: color 0.22s ease;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &--active {
+    background: $accent;
+    border-color: transparent;
+    box-shadow: $shadow;
+    transform: translateY(-1px);
+
+    .catCard__label {
+      color: #fff;
+    }
+    .catCard__icon svg {
+      fill: #fff;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .categories__title {
+    font-size: 22px;
+  }
+  .categories__scroller {
+    gap: 16px;
+    grid-auto-columns: 140px;
+  }
+  .catCard {
+    padding: 22px 14px;
+  }
+}
