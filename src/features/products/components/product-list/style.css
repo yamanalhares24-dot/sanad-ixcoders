@@ -52,6 +52,7 @@
 }
 
 .product-list-container .swiper-wrapper {
+  /* overflow:hidden ; */
   display: flex !important;
   flex-direction: row !important;
   align-items: stretch;

@@ -78,6 +78,7 @@ export function ProductList() {
 
       <Swiper
         modules={[Navigation]}
+        style={{overflowX:"hidden"}}
         spaceBetween={20}
         slidesPerView={4}
         navigation={{
