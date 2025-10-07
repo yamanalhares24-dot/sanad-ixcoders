@@ -374,7 +374,14 @@
 
 @media (max-width: 768px) {
   .relatedGrid {
-    justify-content: flex-start;
-    padding-left: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  
+  .relatedGrid > * {
+    min-width: 280px;
+    max-width: 320px;
   }
 }
