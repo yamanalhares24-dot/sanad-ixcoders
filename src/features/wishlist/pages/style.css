@@ -30,3 +30,24 @@
     justify-items: center;
   }
 }
+
+.empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-card h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.empty-card p {
+  color: #666;
+  font-size: 1rem;
+}
