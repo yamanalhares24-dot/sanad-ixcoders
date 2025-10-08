@@ -40,8 +40,8 @@ const slides: Slide[] = [
   {
     id: "2",
     image: HERO_IMG2,
-    badge: "iPhone 14 Series",
-    titleLines: ["Up to 10% ", "off Voucher"],
+    badge: "iPhone 16 Series",
+    titleLines: ["Up to 50% ", "off Voucher"],
     cta: "Shop Now",
   },
 ];
